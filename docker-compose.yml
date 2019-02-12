@@ -1,0 +1,22 @@
+version: "2"
+services:
+  nginx:
+      build:
+        context: ./nginx
+        dockerfile: Dockerfile
+      image: usmanriaz90/laravel-server
+      depends_on:
+        - fpm
+      ports:
+          - "8082:80"
+      links:
+          - fpm
+      tty: true
+  fpm:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      image: usmanriaz90/laravel-app
+      tty: true
+      ports:
+          - "9000:9000"
