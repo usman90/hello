@@ -1,4 +1,4 @@
 language: php
 php:
     - '7.2'
-install: composer install
+install: chmod +x ./start.sh
