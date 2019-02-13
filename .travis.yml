@@ -1,4 +1,4 @@
 language: php
 php:
     - '7.2'
-before_install: chmod +x start.sh
+install: chmod +x start.sh
